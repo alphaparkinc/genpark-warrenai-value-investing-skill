@@ -1,0 +1,60 @@
+{
+  "name": "genpark-warrenai-value-investing-skill",
+  "version": "1.0.0",
+  "description": "GenPark AI Agent Skill - WarrenAI value investing scanner and stock intrinsic value analyzer.",
+  "author": "genpark",
+  "category": "finance",
+  "tags": [
+    "finance",
+    "investing",
+    "warrenai",
+    "stock-analysis",
+    "value-investing"
+  ],
+  "inputs": {
+    "ticker": {
+      "type": "string",
+      "description": "Stock ticker symbol (e.g. AAPL, MSFT)."
+    },
+    "current_price": {
+      "type": "number",
+      "description": "Current market price in USD."
+    },
+    "eps": {
+      "type": "number",
+      "description": "Earnings per share (TTM)."
+    },
+    "expected_growth_rate": {
+      "type": "number",
+      "description": "Expected EPS annual growth rate in percentage (e.g., 12.0)."
+    },
+    "roe": {
+      "type": "number",
+      "description": "Return on equity percentage (e.g., 22.5)."
+    },
+    "debt_to_equity": {
+      "type": "number",
+      "description": "Debt-to-equity leverage ratio (e.g., 0.8)."
+    }
+  },
+  "outputs": {
+    "intrinsic_value": {
+      "type": "number",
+      "description": "Estimated intrinsic value per share in USD."
+    },
+    "margin_of_safety_pct": {
+      "type": "number",
+      "description": "Safety margin buffer discount ratio."
+    },
+    "recommendation_rating": {
+      "type": "string",
+      "description": "WarrenAI rating: STRONG BUY, BUY, HOLD, UNDERVALUED, OVERVALUED."
+    },
+    "financial_health_audit": {
+      "type": "string",
+      "description": "Summary report of key value investing metrics."
+    }
+  },
+  "entrypoint": "client.py",
+  "example": "example_usage.py"
+}
